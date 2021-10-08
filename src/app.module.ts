@@ -2,7 +2,6 @@ import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { IncorporationModule } from './features/incorporation/incorporation.module';
 import { LanguageMiddleware } from './common/middlewares/language.middleware';
 import { SharedModule } from './common/shared.module';
@@ -29,7 +28,6 @@ import { SharedModule } from './common/shared.module';
     IncorporationModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
